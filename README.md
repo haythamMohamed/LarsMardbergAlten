@@ -1,8 +1,6 @@
-# Spring Boot Application Template/Starter-Project
+# Vechile Tracking System
 
-The only thing better than a Maven archetype is a repo you can fork with everything already setup. Skip the documentation and just fork-and-code. 
-
-Delete the sample code, replace with your own and you’re good to go.
+[![Build Status](https://travis-ci.com/haythamMohamed/LarsMardbergAlten.svg?branch=master)](https://travis-ci.com/haythamMohamed/LarsMardbergAlten)
 
 ## Built With
 
