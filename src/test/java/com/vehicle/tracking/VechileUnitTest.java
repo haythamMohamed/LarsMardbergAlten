@@ -25,7 +25,7 @@ public class VechileUnitTest {
 	
 	@Test
 	public void testSearchAllVechilesWithNoFilters () {
-		List<Vechile> vechiles = vechileService.searchForVechiles(null);
+		List<Vechile> vechiles = getAllVechiles();
 		assertNotNull(vechiles);
 		assertTrue(vechiles.size() > 0);
 	}
@@ -47,5 +47,23 @@ public class VechileUnitTest {
 		
 		List<Vechile> vechiles = vechileService.searchForVechiles(searchVechileDTO);
 		assertNotNull(vechiles);
+	}
+	
+	@Test
+	public void testRandomGeneratingStatus () {
+		vechileService.generateRandomStatuses();
+		
+		List<Vechile> vechiles = getAllVechiles();
+		assertNotNull(vechiles);
+		assertTrue(vechiles.size() > 0);
+		
+		for(Vechile vechile : vechiles) {
+			assertNotNull(vechile.getLastStatus());
+			assertTrue(vechile.getLastStatus() == Status.CONNECTED || vechile.getLastStatus() == Status.DISCONNECTED);
+		}
+	}
+	
+	private List<Vechile> getAllVechiles (){
+		return vechileService.searchForVechiles(null);
 	}
 }
